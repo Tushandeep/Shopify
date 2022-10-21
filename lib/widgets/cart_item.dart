@@ -26,16 +26,16 @@ class CartItem extends StatelessWidget {
       key: ValueKey(id),
       background: Container(
         color: Theme.of(context).errorColor,
-        child: const Icon(
-          Icons.delete,
-          color: Colors.white,
-          size: 40,
-        ),
         alignment: Alignment.centerRight,
         padding: const EdgeInsets.only(right: 20),
         margin: const EdgeInsets.symmetric(
           horizontal: 15,
           vertical: 4,
+        ),
+        child: const Icon(
+          Icons.delete,
+          color: Colors.white,
+          size: 40,
         ),
       ),
       direction: DismissDirection.endToStart,
@@ -86,7 +86,7 @@ class CartItem extends StatelessWidget {
             ),
           ),
           title: Text(title),
-          subtitle: Text('Total: \$' + (price * quantity).toStringAsFixed(2)),
+          subtitle: Text('Total: \$${(price * quantity).toStringAsFixed(2)}'),
           trailing: Text('${quantity}x'),
         ),
       ),

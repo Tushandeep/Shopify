@@ -10,7 +10,7 @@ class FadeInUp extends StatefulWidget {
   }) : super(key: key);
 
   @override
-  _FadeInUpState createState() => _FadeInUpState();
+  State<FadeInUp> createState() => _FadeInUpState();
 }
 
 class _FadeInUpState extends State<FadeInUp>

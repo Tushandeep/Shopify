@@ -10,7 +10,7 @@ class EditProductScreen extends StatefulWidget {
   const EditProductScreen({Key? key}) : super(key: key);
 
   @override
-  _EditProductScreenState createState() => _EditProductScreenState();
+  State<EditProductScreen> createState() => _EditProductScreenState();
 }
 
 class _EditProductScreenState extends State<EditProductScreen> {
@@ -148,7 +148,9 @@ class _EditProductScreenState extends State<EditProductScreen> {
       setState(() {
         _isLoading = false;
       });
-      Navigator.of(context).pop();
+      Future.delayed(const Duration(seconds: 0), () {
+        Navigator.pop(context);
+      });
     }
   }
 
@@ -376,13 +378,13 @@ class _EditProductScreenState extends State<EditProductScreen> {
                             primaryAppColor,
                           ),
                         ),
+                        onPressed: _saveForm,
                         child: Text(
                           canEdit ? 'Save Editing' : 'Add Product',
                           style: const TextStyle(
                             fontSize: 20,
                           ),
                         ),
-                        onPressed: _saveForm,
                       ),
                       const SizedBox(
                         height: 50,

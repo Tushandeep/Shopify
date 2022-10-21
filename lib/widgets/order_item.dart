@@ -1,5 +1,3 @@
-import 'dart:math';
-
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
@@ -27,19 +25,16 @@ class _OrderItemTileState extends State<OrderItemTile> {
         children: <Widget>[
           ListTile(
             title: Text(
-              '\$' + widget.order.amount.toStringAsFixed(2),
+              '\$${widget.order.amount.toStringAsFixed(2)}',
               style: const TextStyle(
                 fontSize: 22,
                 fontWeight: FontWeight.bold,
               ),
             ),
             subtitle: Text(
-              'Dated:  ' +
-                  DateFormat('dd/MM/yyyy').format(
-                    widget.order.dateTime,
-                  ) +
-                  '\t\t\t\t\t\t\tTime:  ' +
-                  DateFormat('hh:mm a').format(widget.order.dateTime),
+              'Dated:  ${DateFormat('dd/MM/yyyy').format(
+                widget.order.dateTime,
+              )}\t\t\t\t\t\t\tTime:  ${DateFormat('hh:mm a').format(widget.order.dateTime)}',
             ),
             trailing: IconButton(
               icon: Icon((!_expanded) ? Icons.expand_more : Icons.expand_less),

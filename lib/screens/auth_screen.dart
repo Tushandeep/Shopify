@@ -96,7 +96,7 @@ class AuthCard extends StatefulWidget {
   }) : super(key: key);
 
   @override
-  _AuthCardState createState() => _AuthCardState();
+  State<AuthCard> createState() => _AuthCardState();
 }
 
 class _AuthCardState extends State<AuthCard>
@@ -342,6 +342,7 @@ class _AuthCardState extends State<AuthCard>
                       if (value!.isEmpty || value.length < 5) {
                         return 'Password is too short!';
                       }
+                      return null;
                     },
                     onSaved: (value) {
                       _authData['password'] = value!;
@@ -375,6 +376,7 @@ class _AuthCardState extends State<AuthCard>
                                 if (value != _passwordController.text) {
                                   return 'Passwords do not match!';
                                 }
+                                return null;
                               }
                             : null,
                       ),
@@ -389,8 +391,6 @@ class _AuthCardState extends State<AuthCard>
                   FadeInUp(
                     factor: _animationFactor(2),
                     child: ElevatedButton(
-                      child: Text(
-                          _authMode == AuthMode.login ? 'LOGIN' : 'SIGN UP'),
                       onPressed: _submit,
                       style: ButtonStyle(
                         shape: MaterialStateProperty.all(
@@ -414,6 +414,8 @@ class _AuthCardState extends State<AuthCard>
                           ),
                         ),
                       ),
+                      child: Text(
+                          _authMode == AuthMode.login ? 'LOGIN' : 'SIGN UP'),
                     ),
                   ),
                 const SizedBox(
@@ -422,17 +424,6 @@ class _AuthCardState extends State<AuthCard>
                 FadeInUp(
                   factor: _animationFactor(3),
                   child: ElevatedButton(
-                    child: FittedBox(
-                      child: Text(
-                        _authMode == AuthMode.login
-                            ? 'Don\'t have an account?  SIGN UP'
-                            : 'Already have an account?  LOG IN',
-                        style: TextStyle(
-                          // fontSize: 14,
-                          color: Theme.of(context).primaryColor,
-                        ),
-                      ),
-                    ),
                     onPressed: _switchAuthMode,
                     style: ButtonStyle(
                       padding: MaterialStateProperty.all(
@@ -445,6 +436,17 @@ class _AuthCardState extends State<AuthCard>
                           Theme.of(context).primaryTextTheme.button!.color),
                       elevation: MaterialStateProperty.all(0.0),
                       tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                    ),
+                    child: FittedBox(
+                      child: Text(
+                        _authMode == AuthMode.login
+                            ? 'Don\'t have an account?  SIGN UP'
+                            : 'Already have an account?  LOG IN',
+                        style: TextStyle(
+                          // fontSize: 14,
+                          color: Theme.of(context).primaryColor,
+                        ),
+                      ),
                     ),
                   ),
                 ),

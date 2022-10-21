@@ -28,7 +28,7 @@ class TotalAmountCard extends StatelessWidget {
             const Spacer(),
             Chip(
               label: Text(
-                '\$' + cart.totalAmount.toStringAsFixed(2),
+                '\$${cart.totalAmount.toStringAsFixed(2)}',
                 style: TextStyle(
                   color: Theme.of(context).primaryTextTheme.headline6!.color,
                 ),
@@ -82,9 +82,6 @@ class _OrderButtonState extends State<OrderButton> {
               );
               widget.cart.clear();
             },
-      child: const Text(
-        'Order Now',
-      ),
       style: ButtonStyle(
         foregroundColor: MaterialStateProperty.all(
           (widget.cart.totalAmount <= 0)
@@ -94,6 +91,9 @@ class _OrderButtonState extends State<OrderButton> {
         backgroundColor: MaterialStateProperty.all(
           Theme.of(context).primaryTextTheme.headline6!.color,
         ),
+      ),
+      child: const Text(
+        'Order Now',
       ),
     );
   }

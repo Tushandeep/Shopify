@@ -50,8 +50,8 @@ class _ProductsOverviewScreenState extends State<ProductsOverviewScreen> {
           Consumer<Cart>(
             builder: (_, cart, ch) {
               return Badge(
-                child: ch!,
                 value: cart.itemCount.toString(),
+                child: ch!,
               );
             },
             child: IconButton(
@@ -72,12 +72,12 @@ class _ProductsOverviewScreenState extends State<ProductsOverviewScreen> {
             icon: const Icon(Icons.more_vert),
             itemBuilder: (_) => [
               const PopupMenuItem(
-                child: Text('Only Favorites'),
                 value: FilterOptions.favorites,
+                child: Text('Only Favorites'),
               ),
               const PopupMenuItem(
-                child: Text('Show All'),
                 value: FilterOptions.all,
+                child: Text('Show All'),
               ),
             ],
           )

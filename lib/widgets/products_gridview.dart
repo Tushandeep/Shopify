@@ -16,20 +16,20 @@ class ProductsGrid extends StatefulWidget {
 class _ProductsGridState extends State<ProductsGrid> {
   @override
   Widget build(BuildContext context) {
-    final _showFav = Provider.of<ShowFavorite>(
+    final showFav = Provider.of<ShowFavorite>(
       context,
     );
     final productsData = Provider.of<Products>(context);
-    final products = _showFav.getShowFavValue()
+    final products = showFav.getShowFavValue()
         ? productsData.favoriteItems
         : productsData.items;
     return Builder(
       builder: (_) {
-        if (_showFav.getShowFavValue() && products.isEmpty) {
+        if (showFav.getShowFavValue() && products.isEmpty) {
           return Center(
             child: GestureDetector(
               onTap: () {
-                _showFav.toggleFav(false);
+                showFav.toggleFav(false);
               },
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,

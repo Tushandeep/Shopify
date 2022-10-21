@@ -23,28 +23,6 @@ class ProductItem extends StatelessWidget {
         return ClipRRect(
           borderRadius: BorderRadius.circular(15),
           child: GridTile(
-            child: GestureDetector(
-              onTap: () {
-                Navigator.of(context).pushNamed(
-                  ProductDetailScreen.routeName,
-                  arguments: product.id,
-                );
-              },
-              onDoubleTap: () {
-                if (!product.isFavorite) {
-                  product.toggleFavoriteStatus(authData.token, authData.userId);
-                }
-              },
-              child: Hero(
-                tag: product.id,
-                child: FadeInImage(
-                  placeholder:
-                      const AssetImage('assets/images/product-placeholder.png'),
-                  image: NetworkImage(product.imageUrl),
-                  fit: BoxFit.cover,
-                ),
-              ),
-            ),
             footer: Tooltip(
               message: product.title,
               child: GridTileBar(
@@ -102,6 +80,28 @@ class ProductItem extends StatelessWidget {
                     );
                   },
                   color: Theme.of(context).colorScheme.secondary,
+                ),
+              ),
+            ),
+            child: GestureDetector(
+              onTap: () {
+                Navigator.of(context).pushNamed(
+                  ProductDetailScreen.routeName,
+                  arguments: product.id,
+                );
+              },
+              onDoubleTap: () {
+                if (!product.isFavorite) {
+                  product.toggleFavoriteStatus(authData.token, authData.userId);
+                }
+              },
+              child: Hero(
+                tag: product.id,
+                child: FadeInImage(
+                  placeholder:
+                      const AssetImage('assets/images/product-placeholder.png'),
+                  image: NetworkImage(product.imageUrl),
+                  fit: BoxFit.cover,
                 ),
               ),
             ),

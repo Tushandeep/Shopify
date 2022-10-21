@@ -32,7 +32,7 @@ class OrderItemList extends StatelessWidget {
                   Text(
                     (prod.title.length <= 25)
                         ? prod.title
-                        : prod.title.substring(0, 25) + '...',
+                        : '${prod.title.substring(0, 25)}...',
                     style: const TextStyle(
                       fontSize: 18,
                       fontWeight: FontWeight.bold,
