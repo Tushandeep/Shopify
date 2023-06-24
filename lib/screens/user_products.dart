@@ -58,10 +58,10 @@ class UserProductsScreen extends StatelessWidget {
               return Builder(
                 builder: (_) {
                   if (productsData.items.isEmpty) {
-                    return Center(
+                    return const Center(
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
-                        children: const <Widget>[
+                        children: <Widget>[
                           Icon(
                             Icons.add_shopping_cart_rounded,
                             size: 100,

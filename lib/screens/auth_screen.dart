@@ -67,7 +67,7 @@ class AuthScreen extends StatelessWidget {
                         style: TextStyle(
                           color: Theme.of(context)
                               .primaryTextTheme
-                              .headline6!
+                              .titleLarge!
                               .color,
                           fontSize: 50,
                           fontFamily: 'Anton',
@@ -264,7 +264,7 @@ class _AuthCardState extends State<AuthCard>
   OutlineInputBorder get decorateErrorBorder {
     return OutlineInputBorder(
       borderSide: BorderSide(
-        color: Theme.of(context).errorColor,
+        color: Theme.of(context).colorScheme.error,
       ),
       borderRadius: BorderRadius.circular(10),
     );
@@ -409,7 +409,7 @@ class _AuthCardState extends State<AuthCard>
                           TextStyle(
                             color: Theme.of(context)
                                 .primaryTextTheme
-                                .button!
+                                .labelLarge!
                                 .color,
                           ),
                         ),
@@ -433,7 +433,7 @@ class _AuthCardState extends State<AuthCard>
                         ),
                       ),
                       backgroundColor: MaterialStateProperty.all(
-                          Theme.of(context).primaryTextTheme.button!.color),
+                          Theme.of(context).primaryTextTheme.labelLarge!.color),
                       elevation: MaterialStateProperty.all(0.0),
                       tapTargetSize: MaterialTapTargetSize.shrinkWrap,
                     ),

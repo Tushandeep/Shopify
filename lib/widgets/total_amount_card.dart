@@ -30,7 +30,7 @@ class TotalAmountCard extends StatelessWidget {
               label: Text(
                 '\$${cart.totalAmount.toStringAsFixed(2)}',
                 style: TextStyle(
-                  color: Theme.of(context).primaryTextTheme.headline6!.color,
+                  color: Theme.of(context).primaryTextTheme.titleLarge!.color,
                 ),
               ),
               backgroundColor: Theme.of(context).primaryColor,
@@ -89,7 +89,7 @@ class _OrderButtonState extends State<OrderButton> {
               : Theme.of(context).primaryColor,
         ),
         backgroundColor: MaterialStateProperty.all(
-          Theme.of(context).primaryTextTheme.headline6!.color,
+          Theme.of(context).primaryTextTheme.titleLarge!.color,
         ),
       ),
       child: const Text(

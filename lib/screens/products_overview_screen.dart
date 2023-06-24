@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:flutter/material.dart' hide Badge;
 import 'package:provider/provider.dart';
 
 import '../screens/cart_screen.dart';
@@ -97,10 +97,10 @@ class _ProductsOverviewScreenState extends State<ProductsOverviewScreen> {
               }
               if (product.items.isEmpty &&
                   snapshot.connectionState == ConnectionState.done) {
-                return Center(
+                return const Center(
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
-                    children: const <Widget>[
+                    children: <Widget>[
                       Icon(
                         Icons.add_shopping_cart_rounded,
                         size: 100,

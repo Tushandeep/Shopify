@@ -167,7 +167,7 @@ class _EditProductScreenState extends State<EditProductScreen> {
     return OutlineInputBorder(
       borderRadius: BorderRadius.circular(15),
       borderSide: BorderSide(
-        color: Theme.of(context).errorColor,
+        color: Theme.of(context).colorScheme.error,
       ),
     );
   }

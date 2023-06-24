@@ -31,9 +31,9 @@ class _ProductsGridState extends State<ProductsGrid> {
               onTap: () {
                 showFav.toggleFav(false);
               },
-              child: Column(
+              child: const Column(
                 mainAxisAlignment: MainAxisAlignment.center,
-                children: const <Widget>[
+                children: <Widget>[
                   Icon(
                     Icons.favorite_outline_rounded,
                     size: 100,

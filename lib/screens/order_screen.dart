@@ -57,10 +57,10 @@ class _OrdersScreenState extends State<OrdersScreen> {
                     Navigator.of(context)
                         .pushReplacementNamed(ProductsOverviewScreen.routeName);
                   },
-                  child: Center(
+                  child: const Center(
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
-                      children: const <Widget>[
+                      children: <Widget>[
                         Icon(
                           Icons.task_outlined,
                           size: 100,
